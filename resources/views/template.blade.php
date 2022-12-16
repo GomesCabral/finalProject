@@ -104,12 +104,10 @@
                         <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4 ">
                             <!-- Content -->
                             <h6 class="text-uppercase fw-bold mb-4">
-                                <i class="fas fa-gem me-3 "></i>Company name
+                                <i class="fas fa-gem me-3 "></i>Enlite
                             </h6>
                             <p class="footer">
-                                Here you can use rows and columns to organize your footer content. Lorem
-                                ipsum
-                                dolor sit amet, consectetur adipisicing elit.
+                                Providing the minimum energy consuming products with a minimum price to the users.
                             </p>
                         </div>
                         <!-- Grid column -->
@@ -122,19 +120,22 @@
                         <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
                             <!-- Links -->
                             <h6 class="text-uppercase fw-bold mb-4">
-                                Useful links
+                                Team Members
                             </h6>
                             <p class="footer">
-                                <a href="#!" class="text-reset">Pricing</a>
+                                Pedro
                             </p>
                             <p class="footer">
-                                <a href="#!" class="text-reset">Settings</a>
+                               Gilbert
                             </p>
                             <p class="footer">
-                                <a href="#!" class="text-reset">Orders</a>
+                               Khaled
                             </p>
                             <p class="footer">
-                                <a href="#!" class="text-reset">Help</a>
+                                Pragya
+                            </p>
+                            <p class="footer">
+                                Mhamet
                             </p>
                         </div>
                         <!-- Grid column -->
@@ -146,7 +147,7 @@
                             <p class="footer"><i class="fas fa-home me-3 footer"></i> Luxembourg - NumericAll</p>
                             <p class="footer">
                                 <i class="fas fa-envelope me-3"></i>
-                                info@example.com
+                                info@numericall.com
                             </p>
                             <p class="footer"><i class="fas fa-phone me-3 "></i> + 01 234 567 88</p>
                             <p class="footer"><i class="fas fa-print me-3 "></i> + 01 234 567 89</p>
@@ -161,7 +162,7 @@
             <!-- Copyright -->
             <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
                 © 2022 Copyright:
-                <a class="text-reset fw-bold" href="https://mdbootstrap.com/">NUMERICALL</a>
+                <a class="text-reset fw-bold"  target="_blank" href="https://www.numericall.com/">NUMERICALL</a>
             </div>
             <!-- Copyright -->
         </footer>
