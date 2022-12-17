@@ -87,7 +87,13 @@ body {
   background-color: var(--bs-body-bg);
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  background-color: #e2e8f0; 
+     background-image: url("https://cdn.create.vista.com/api/media/medium/461189336/stock-photo-geometric-background-light-grey-mosaic?token=");
+    
+  background-attachment: fixed;
+ 
 }
+
 
 hr {
   margin: 1rem 0;

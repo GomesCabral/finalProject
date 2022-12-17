@@ -1,6 +1,6 @@
 @extends('template')
 
-@section('title', 'Your Profile')
+@section('title', 'User Profile')
 
 @section('content')
 
@@ -66,9 +66,9 @@
                   </div>
                 </div>
               </div>
-              {{-- <ul class="nav nav-tabs">
+              <ul class="nav nav-tabs">
                 <li class="nav-item"><a href="" class="active nav-link">Settings</a></li>
-              </ul> --}}
+              </ul>
               <div class="tab-content pt-3">
                 <div class="tab-pane active">
                   <form class="form" novalidate="" method="POST">

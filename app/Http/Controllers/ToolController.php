@@ -86,12 +86,8 @@ class ToolController extends Controller
         $tool = new Tool;
 
         $tool->name = $request->name;
-        $tool->watt = $request->watt;
         $tool->picture = $request->picture;
         $tool->price = $request->price;
-        $tool->seller_id = $request->seller;
-        $tool->rating = $request->rating;
-        $tool->serialnumber = $request->serialnumber;
 
         $result = $tool->save();
         if ($result)

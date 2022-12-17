@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [RealToolController::class, 'home']);
+Route::get('/', [RealToolController::class, 'Home']);
 Route::get('/home', [RealToolController::class, 'index']);
 Route::get('/error', [RealToolController::class, 'error']);
 
@@ -27,6 +27,7 @@ Route::get('/addPersonalTool', [UserController::class, 'addPersonalTool']);
 Route::post('/addPersonalTool', [UserController::class, 'insertPersonalTool']);
 
 Route::get('/users', [UserController::class, 'index']);
+Route::get('/delete-user/{id}', [UserController::class, 'deleteUser']);
 Route::get('/personalTools', [PersonalToolController::class, 'index']);
 
 Route::get('/profile', [UserController::class, 'showProfile']);
@@ -40,6 +41,14 @@ Route::post('/login', [UserController::class, 'DoLogin']);
 
 Route::get('/admin-login', [UserController::class, 'showAdminLogin']);
 Route::post('/admin-login', [UserController::class, 'AdminLogin']);
+Route::get('/admin-profile', [UserController::class, 'showAdminProfile']);
+Route::get('/edit-admin-profile', [UserController::class, 'editAdminProfile']);
+Route::post('/edit-admin-profile', [UserController::class, 'updateAdminProfile']);
+//////Route::post('/edit-user', [UserController::class, 'updateAdminProfile']);
+
+Route::get('/questions-form', [UserController::class, 'showQuestionFormData']);
+Route::post('/questions-form', [UserController::class, 'insertQuestionFormData']);
+Route::get('/calculator', [UserController::class, 'showCalculator']);
 
 Route::get('/logout', [UserController::class, 'logOut']);
 

@@ -10,6 +10,12 @@
  * Copyright 2011-2021 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+
+ .related_products{
+  background-image: url("https://cdn.create.vista.com/api/media/medium/461189336/stock-photo-geometric-background-light-grey-mosaic?token=");
+  
+background-attachment: fixed;
+}
 :root {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;

@@ -2,15 +2,13 @@
 
 @section('content')
 
-@if (session('message'))
-<div class="alert alert-success">
-    {{ session('message') }}
-</div>
-@endif
-
-@if (session('error'))
-<div class="alert alert-error">
-    {{ session('error') }}
+@if ($errors->any())
+<div class="alert alert-danger">
+    <ul>
+        @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+        @endforeach
+    </ul>
 </div>
 @endif
 
@@ -19,7 +17,7 @@
       <div class="row d-flex align-items-center justify-content-center h-100">
         <div class="col-md-8 col-lg-7 col-xl-6">
           <img src="../assets/images/admin.png"
-            class="img-fluid" alt="energyimage">
+            class="img-fluid" alt="energy image">
         </div>
         <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
           <form  method="POST">
@@ -42,10 +40,6 @@
             <div class="d-flex justify-content-around align-items-center mb-4">
               
             </div>
-  
-            <!-- Submit button -->
-            
-  
             
           </form>
         </div>

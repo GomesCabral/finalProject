@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/nav.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/footer.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/store.css') }}">
+    
     <link rel="stylesheet" href="{{ asset('assets/css/store-details.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/tool-details.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/userPage.css') }}">
@@ -40,12 +40,14 @@
 
         <div class="nav-links">
             <a href="/store">Store</a>
-            @if (session('user_isAdmin'))
+            @if (session('isAdmin'))
             <a href="/users">Users list</a>
             <a href="/createTool">Create Tool</a>
+            <a href="/admin-profile">Admin Profile</a>
             @endif
             @if (session('user_id'))
             <a href="/profile">Profile</a>
+            <a href="/calculator">Energy Calculator</a>
             <!--<a href="/edit-profile">Edit Profile</a>-->
             <!--<a href="/addPersonalTool">add new personal Tool</a>-->
             <a href="/forum">Forum</a>

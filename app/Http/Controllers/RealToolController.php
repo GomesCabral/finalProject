@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\CreateToolRequest;
 use App\Http\Requests\InsertRatingRequest;
-use App\Models\RealTool;
+use App\Models\Tool;
 use Illuminate\Support\Facades\DB;
 
 class RealToolController extends Controller
@@ -32,15 +32,15 @@ class RealToolController extends Controller
 
     public function toolDetails($id)
     {
-        $tool = RealTool::where('id', $id)->first();
+        $tool = Tool::where('id', $id)->first();
         return view('tool-details', ['tool' => $tool]);
     }
     public function storeDetails($id)
     {
-        $tool = RealTool::where('id', $id)->first();
+        $tool = Tool::where('id', $id)->first();
         $tools = DB::table('real_tools')
-            //->join('sellers', 'tools.seller_id', '=', 'sellers.id')
-            //->select('tools.*','sellers.*')
+            //join('sellers', 'tools.seller_id', '=', 'sellers.id')
+            //select('tools.*','sellers.*')
             ->limit(3)
             ->get();
         //dd($tools);
@@ -48,13 +48,13 @@ class RealToolController extends Controller
     }
     public function buyTool($id)
     {
-        $tool = RealTool::where('id', $id)->first();
+        $tool = Tool::where('id', $id)->first();
         return view('buy-tool', ['tool' => $tool]);
     }
 
     public function showStore()
     {
-        $tools = RealTool::all()->sortBy('watt');
+        $tools = Tool::all()->sortBy('watt');
         return view('store', ['tools' => $tools]);
     }
 
@@ -87,7 +87,7 @@ class RealToolController extends Controller
     public function store(CreateToolRequest $request)
     {
         //$request->validated();
-        $tool = new RealTool;
+        $tool = new Tool;
 
         $tool->name = $request->name;
         $tool->watt = $request->watt;

@@ -1,4 +1,17 @@
-@extends('template')
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ asset('assets/css/store.css') }}">
+</head>
+<body>
+    
+
+
+    @extends('template')
 
 @section('title', 'tools list')
 
@@ -21,35 +34,19 @@
 
 
 <!-- Header-->
-<header class="bg-warning py-5">
+<header class="bg-transparent py-5">
     <div class="container px-4 px-lg-5 my-5">
-        <div class="text-center text-white">
+        <div class="text-center text-muted">
             <h1 class="display-4 fw-bolder">Best energy-saving gadgets for 2022</h1>
-            <p class="lead fw-normal text-white-50 mb-0">With this shop hompeage template</p>
+            <p class="lead fw-normal text-muted -50 mb-0"> Invest in energy-saving technology </p>
         </div>
     </div>
 </header>
 
-<div class="card h-100">
-    <!-- Product image-->
-    <img class="card-img-top" src="" alt="..." />
-    <!-- Product details-->
-    <div class="card-body p-4">
-        <div class="text-center">
-            <!-- Product name-->
-            <h5 id="product-title" class="fw-bolder"></h5>
-            <h5 id="product-description" class="fw-bolder"></h5>
-        </div>
-    </div>
-    <!-- Product actions-->
-    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="">View
-                details</a></div>
-    </div>
-</div>
 
 
-<button id="product-btn">Fetch Product</button>
+
+
 
 <script>
     document.getElementById('product-btn').addEventListener("click", function () {
@@ -69,7 +66,7 @@
             <div class="col mb-5">
                 <div class="card h-100">
                     <!-- Product image-->
-                    <img class="card-img-top" src="https://robohash.org/{{ $tool->picture }}.jpg?bgset=bg2" alt="..." />
+                    <img class="card-img-top" src="https://robohash.org/{{ $tool->picture }}" alt="..." />
                     <!-- Product details-->
                     <div class="card-body p-4">
                         <div class="text-center">
@@ -92,3 +89,5 @@
 </section>
 
 @endsection
+</body>
+</html>

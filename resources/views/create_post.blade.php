@@ -4,15 +4,13 @@
 
 @section('content')
 
-@if (session('message'))
-<div class="alert alert-success">
-    {{ session('message') }}
-</div>
-@endif
-
-@if (session('error'))
-<div class="alert alert-error">
-    {{ session('error') }}
+@if ($errors->any())
+<div class="alert alert-danger">
+    <ul>
+        @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+        @endforeach
+    </ul>
 </div>
 @endif
 
@@ -44,7 +42,7 @@
                         <div class="d-flex flex-row align-items-center mb-4">
                           <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                           <div class="form-outline flex-fill mb-0">
-                            <input name="title" type="text" id="form3Example1c" class="form-control" placeholder="Title of your Post (optional)"/>
+                            <input name="title" type="text" id="form3Example1c" class="form-control" placeholder="Title of your Post "/>
                           
                           </div>
                         </div>
@@ -52,7 +50,7 @@
                         <div class="d-flex flex-row align-items-center mb-4">
                           <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
                           <div class="form-outline flex-fill mb-0">
-                            <textarea name="text" id="form3Example3c" class="form-control" placeholder="your text here"></textarea>
+                            <textarea name="text" id="form3Example3c" class="form-control" placeholder="Your text here"></textarea>
                           </div>
                         </div>
       

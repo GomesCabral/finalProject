@@ -18,7 +18,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = DB::table('posts')->join('users','users.id','=','posts.user_id')->select('posts.*', 'users.*')->get();
+        $posts = DB::table('posts')->join('users', 'users.id', '=', 'posts.user_id')->select('posts.*', 'users.*')->get();
         return view('forum', ['posts' => $posts]);
     }
 
@@ -31,7 +31,7 @@ class PostController extends Controller
     {
         return view('create_post');
     }
-    
+
     /**
      * Store a newly created resource in storage.
      *
@@ -41,21 +41,20 @@ class PostController extends Controller
     public function store(CreatePostRequest $request)
     {
         $request->validated();
+        $user_id = session('user_id');
         $post = new Post;
 
-        $post->user_id = $request->user_id;
-        $post->title = $request->title;
+        $post->user_id = $user_id;
         $post->text = $request->text;
         $post->nameoftool = $request->nameoftool;
         $post->linktotool = $request->linktotool;
-        $post->tool_id = 4; // this still needs to be given the correct value
- 
+
         $result = $post->save();
 
         if ($result)
-           return redirect('/forum')->with('message', 'Successfully insert in the DB !');
+            return redirect('/forum')->with('message', 'Successfully insert in the DB !');
         else
-        echo "problem inserting";
+            echo "problem inserting";
     }
 
     /**

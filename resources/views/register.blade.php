@@ -1,6 +1,17 @@
 @extends('template')
 
 @section('content')
+
+@if ($errors->any())
+<div class="alert alert-danger">
+    <ul>
+        @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+        @endforeach
+    </ul>
+</div>
+@endif
+
 <section >
     <div class="container py-5 h-100">
       <div class="row d-flex align-items-center justify-content-center h-100">
@@ -27,11 +38,11 @@
   
             <!-- Password input -->
             <div class="form-outline mb-4">
-              <input name="password" type="text" id="password" class="form-control form-control-lg" placeholder="Password" /> 
+              <input name="password" type="password" id="password" class="form-control form-control-lg" placeholder="Password" /> 
             </div>
             <!-- Confirm Password input -->
             <div class="form-outline mb-4">
-              <input name="confirmPassword" type="text" id="confirmPassword" class="form-control form-control-lg" placeholder="Confirm Password" /> 
+              <input name="confirmPassword" type="password" id="confirmPassword" class="form-control form-control-lg" placeholder="Confirm Password" /> 
             </div>
 
             <button type="submit" class="btn btn-primary btn-lg btn-block">Register</button>
