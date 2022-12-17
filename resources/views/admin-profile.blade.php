@@ -39,7 +39,6 @@
                 <th scope="col">Avatar</th>
                 <th scope="col">First name</th>
                 <th scope="col">Last Name</th>
-                <th scope="col">password</th>
                 <th scope="col">email</th>
                 <th scope="col">daily_hours_electricity_use</th>
                 <th scope="col">isAdmin</th>
@@ -54,8 +53,6 @@
                 <td>{{$user->avatar}}</td>
                 <td>{{$user->firstname}}</td>
                 <td>{{$user->lastname}}</td>
-                <!--<td>{{$user->password}}</td>-->
-                <td>**************</td>
                 <td>{{$user->email}}</td>
                 <td>{{$user->daily_hours_electricity_use}}</td>
                 <td>{{$user->isAdmin == 0 ? "No" : "Yes"}}</td>

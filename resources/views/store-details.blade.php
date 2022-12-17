@@ -21,7 +21,7 @@
     <div class="container px-4 px-lg-5 my-5">
         <div class="row gx-4 gx-lg-5 align-items-center">
             <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0"
-                    src="https://robohash.org/{{ $tool->picture }}.jpg?bgset=bg2" alt="..." height="900px"></div>
+                    src="{{ $tool->picture }}" alt="..." height="900px"></div>
             <div class="col-md-6">
                 <div class="small mb-1">SKU: BST-498</div>
                 <h1 class="display-5 fw-bolder">{{$tool->name}}</h1>
@@ -39,7 +39,7 @@
                 <div class="d-flex">
                     <input class="form-control text-center me-3" id="inputQuantity" type="num" value="1"
                         style="max-width: 3rem" />
-                    <button onclick="location.href='http://www.example.com'" class="btn btn-outline-dark flex-shrink-0"
+                    <button onclick="location.href='https://www.amazon.com/'" class="btn btn-outline-dark flex-shrink-0"
                         type="button">
                         <i class="bi-cart-fill me-1"></i>
                         Add to cart
@@ -58,7 +58,7 @@
             <div class="col mb-5">
                 <div class="card h-100">
                     <!-- Product image-->
-                    <img class="card-img-top" src="https://robohash.org/{{ $tool->name }}.jpg?bgset=bg2" alt="..." />
+                    <img class="card-img-top" src="{{ $tool->picture }}" alt="..." />
                     <!-- Product details-->
                     <div class="card-body p-4">
                         <div class="text-center">

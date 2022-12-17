@@ -32,7 +32,7 @@
   
             <!-- Password input -->
             <div class="form-outline mb-4">
-              <input name="password" type="text" id="" class="form-control form-control-lg" placeholder="Admin Password" /> 
+              <input name="password" type="password" id="" class="form-control form-control-lg" placeholder="Admin Password" /> 
             </div>
             
             <button type="submit" class="btn btn-primary btn-lg btn-block">Login</button>

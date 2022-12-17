@@ -89,6 +89,11 @@ class RealToolController extends Controller
         //$request->validated();
         $tool = new Tool;
 
+        $tool->seller_id = 1;
+        $tool->rating = 1;
+        $tool->serialnumber = 1;
+        $tool->category = 1;
+
         $tool->name = $request->name;
         $tool->watt = $request->watt;
         $tool->picture = $request->picture;

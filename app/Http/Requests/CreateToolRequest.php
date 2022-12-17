@@ -24,12 +24,12 @@ class CreateToolRequest extends FormRequest
     public function rules()
     {
         return [
-/*/
+
             'name'=>'string',
             'watts'=>'numeric',
             'picture'=>'string',
             'price'=>'numeric',
-            /*/
+            
         ];
     }
 }

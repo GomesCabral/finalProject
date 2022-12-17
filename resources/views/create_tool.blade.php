@@ -1,18 +1,14 @@
 @extends('template')
 
-@section('title', 'Create Tool')
-
 @section('content')
 
-@if (session('message'))
-<div class="alert alert-success">
-    {{ session('message') }}
-</div>
-@endif
-
-@if (session('error'))
-<div class="alert alert-error">
-    {{ session('error') }}
+@if ($errors->any())
+<div class="alert alert-danger">
+    <ul>
+        @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+        @endforeach
+    </ul>
 </div>
 @endif
 

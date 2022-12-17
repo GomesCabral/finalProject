@@ -44,7 +44,9 @@ class PostController extends Controller
         $user_id = session('user_id');
         $post = new Post;
 
-        $post->user_id = $user_id;
+        $post->user_id = session('user_id');
+        $post->tool_id = 4;
+        $post->title = $request->title;
         $post->text = $request->text;
         $post->nameoftool = $request->nameoftool;
         $post->linktotool = $request->linktotool;
