@@ -11,15 +11,13 @@ use App\Http\Requests\LoginRequest;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
 
-class UserController extends Controller
-{
+class UserController extends Controller{
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
+    public function index(){
         $users = User::all()->sortBy('energy_consumption');
         return view('users', ['users' => $users]);
     }
@@ -29,8 +27,7 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
+    public function create(){
         return view('register');
     }
 
@@ -40,8 +37,7 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function doRegistration(RegisterUserRequest $request)
-    {
+    public function doRegistration(RegisterUserRequest $request){
         $request->validated();
         $user = new User;
 
@@ -62,21 +58,19 @@ class UserController extends Controller
             echo "problem inserting";
     }
 
-    public function showProfile()
-    {
+    public function showProfile(){
         $id = session('user_id');
         $user = User::where('id', $id)->first();
         return view('/profile', ['user' => $user]);
     }
-    public function editProfile()
-    {
+
+    public function editProfile(){
         $id = session('user_id');
         $user = User::where('id', $id)->first();
         return view('/edit-profile', ['user' => $user]);
     }
 
-    public function updateProfile(UpdateProfileRequest $request)
-    {
+    public function updateProfile(UpdateProfileRequest $request){
         $request->validated();
         $id = session('user_id');
         $user = User::find($id);
@@ -98,8 +92,7 @@ class UserController extends Controller
         ;
     }
 
-    public function DoLogin(LoginRequest $request)
-    {
+    public function DoLogin(LoginRequest $request){
         $request->validated();
         $hashedPassword = DB::select("SELECT password FROM users WHERE email='$request->email'");
         $hashedPassword = $hashedPassword[0]->password;
@@ -114,8 +107,7 @@ class UserController extends Controller
         }
     }
 
-    public function logOut(Request $request)
-    {
+    public function logOut(Request $request){
         $request->session()->flush();
         return redirect('/')->with('message', 'Successfully logged out');
     }
@@ -135,13 +127,11 @@ class UserController extends Controller
         return view('login');
     }
 
-    public function showAdminLogin()
-    {
+    public function showAdminLogin(){
         return view('admin-login');
     }
 
-    public function AdminLogin(LoginRequest $request)
-    {
+    public function AdminLogin(LoginRequest $request){
         $request->validated();
         $hashedPassword = DB::select("SELECT password FROM users WHERE email='$request->email'");
         $hashedPassword = $hashedPassword[0]->password;
@@ -157,8 +147,7 @@ class UserController extends Controller
     }
 
 
-    public function addPersonalTool()
-    {
+    public function addPersonalTool(){
         return view('update-personal-tools');
     }
 
