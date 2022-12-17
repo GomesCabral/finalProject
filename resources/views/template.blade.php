@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/nav.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/footer.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/store.css') }}">
+    
     <link rel="stylesheet" href="{{ asset('assets/css/store-details.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/tool-details.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/userPage.css') }}">

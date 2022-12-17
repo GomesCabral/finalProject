@@ -29,6 +29,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
+        
 </head>
 
 <body>
@@ -40,7 +41,7 @@
 
             <div class="row gutters-sm align-items-center flex-column ">
                 <div class="col-md-4 mb-3 ">
-                    <div class="card " style="background-color: #7DB748">
+                    <div class="card " >
                         <div class="card-body">
                             <div class="d-flex flex-column align-items-center text-center">
                                 <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin"

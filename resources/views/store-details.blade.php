@@ -17,8 +17,8 @@
 @endif
 
 <!-- Product section-->
-<section class="py-5">
-    <div class="container px-4 px-lg-5 my-5">
+<section class="py-5 bg-light" >
+    <div class="container px-4 px-lg-5 my-5" >
         <div class="row gx-4 gx-lg-5 align-items-center">
             <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0"
                     src="https://robohash.org/{{ $tool->picture }}.jpg?bgset=bg2" alt="..." height="900px"></div>
@@ -37,12 +37,11 @@
                     <hr>
                 </div>
                 <div class="d-flex">
-                    <input class="form-control text-center me-3" id="inputQuantity" type="num" value="1"
-                        style="max-width: 3rem" />
+                   
                     <button onclick="location.href='http://www.example.com'" class="btn btn-outline-dark flex-shrink-0"
                         type="button">
                         <i class="bi-cart-fill me-1"></i>
-                        Add to cart
+                        Link To Buy
                     </button>
                 </div>
             </div>
@@ -50,7 +49,8 @@
     </div>
 </section>
 <!-- Related items section-->
-<section class="py-5 bg-light">
+  
+<section class="py-5 related_products">
     <div class="container px-4 px-lg-5 mt-5">
         <h2 class="fw-bolder mb-4">Related products</h2>
         <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
