@@ -1,9 +1,3 @@
-/*!
- * Chart.js v2.9.4
- * https://www.chartjs.org
- * (c) 2020 Chart.js Contributors
- * Released under the MIT License
- */
 (function (global, factory) {
 typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(function() { try { return require('moment'); } catch(e) { } }()) :
 typeof define === 'function' && define.amd ? define(['require'], function(require) { return factory(function() { try { return require('moment'); } catch(e) { } }()); }) :
@@ -172,12 +166,8 @@ var colorName = {
 };
 
 var conversions = createCommonjsModule(function (module) {
-/* MIT license */
 
 
-// NOTE: conversions should only return primitive values (i.e. arrays, or
-//       values that give correct `typeof` results).
-//       do not use box values types (i.e. Number(), String(), etc.)
 
 var reverseKeywords = {};
 for (var key in colorName) {
@@ -342,9 +332,7 @@ convert.rgb.cmyk = function (rgb) {
 	return [c * 100, m * 100, y * 100, k * 100];
 };
 
-/**
- * See https://en.m.wikipedia.org/wiki/Euclidean_distance#Squared_Euclidean_distance
- * */
+
 function comparativeDistance(x, y) {
 	return (
 		Math.pow(x[0] - y[0], 2) +
@@ -539,7 +527,7 @@ convert.hsv.hsl = function (hsv) {
 	return [h, sl * 100, l * 100];
 };
 
-// http://dev.w3.org/csswg/css-color/#hwb-to-rgb
+
 convert.hwb.rgb = function (hwb) {
 	var h = hwb[0] / 360;
 	var wh = hwb[1] / 100;
@@ -550,7 +538,7 @@ convert.hwb.rgb = function (hwb) {
 	var f;
 	var n;
 
-	// wh + bl cant be > 1
+
 	if (ratio > 1) {
 		wh /= ratio;
 		bl /= ratio;
@@ -564,7 +552,7 @@ convert.hwb.rgb = function (hwb) {
 		f = 1 - f;
 	}
 
-	n = wh + f * (v - wh); // linear interpolation
+	n = wh + f * (v - wh); 
 
 	var r;
 	var g;
@@ -719,7 +707,7 @@ convert.rgb.ansi16 = function (args) {
 	var r = args[0];
 	var g = args[1];
 	var b = args[2];
-	var value = 1 in arguments ? arguments[1] : convert.rgb.hsv(args)[2]; // hsv -> ansi16 optimization
+	var value = 1 in arguments ? arguments[1] : convert.rgb.hsv(args)[2];
 
 	value = Math.round(value / 50);
 
@@ -1070,13 +1058,11 @@ var conversions_15 = conversions.gray;
 
 function buildGraph() {
 	var graph = {};
-	// https://jsperf.com/object-keys-vs-for-in-with-closure/3
 	var models = Object.keys(conversions);
 
 	for (var len = models.length, i = 0; i < len; i++) {
 		graph[models[i]] = {
-			// http://jsperf.com/1-vs-infinity
-			// micro-opt, but this is simple.
+			
 			distance: -1,
 			parent: null
 		};
@@ -1085,10 +1071,9 @@ function buildGraph() {
 	return graph;
 }
 
-// https://en.wikipedia.org/wiki/Breadth-first_search
 function deriveBFS(fromModel) {
 	var graph = buildGraph();
-	var queue = [fromModel]; // unshift -> queue -> pop
+	var queue = [fromModel]; 
 
 	graph[fromModel].distance = 0;
 
@@ -1190,8 +1175,6 @@ function wrapRounded(fn) {
 		var result = fn(args);
 
 		// we're assuming the result is an array here.
-		// see notice in conversions.js; don't use box types
-		// in conversion functions.
 		if (typeof result === 'object') {
 			for (var len = result.length, i = 0; i < len; i++) {
 				result[i] = Math.round(result[i]);
@@ -1379,7 +1362,6 @@ var colorName$1 = {
 	"yellowgreen": [154, 205, 50]
 };
 
-/* MIT license */
 
 
 var colorString = {
@@ -1617,9 +1599,6 @@ for (var name in colorName$1) {
    reverseNames[colorName$1[name]] = name;
 }
 
-/* MIT license */
-
-
 
 var Color = function (obj) {
 	if (obj instanceof Color) {
@@ -1799,7 +1778,6 @@ Color.prototype = {
 	},
 
 	luminosity: function () {
-		// http://www.w3.org/TR/WCAG20/#relativeluminancedef
 		var rgb = this.values.rgb;
 		var lum = [];
 		for (var i = 0; i < rgb.length; i++) {
@@ -1810,7 +1788,6 @@ Color.prototype = {
 	},
 
 	contrast: function (color2) {
-		// http://www.w3.org/TR/WCAG20/#contrast-ratiodef
 		var lum1 = this.luminosity();
 		var lum2 = color2.luminosity();
 		if (lum1 > lum2) {
@@ -1829,7 +1806,7 @@ Color.prototype = {
 	},
 
 	dark: function () {
-		// YIQ equation from http://24ways.org/2010/calculating-color-contrast
+
 		var rgb = this.values.rgb;
 		var yiq = (rgb[0] * 299 + rgb[1] * 587 + rgb[2] * 114) / 1000;
 		return yiq < 128;
@@ -1892,7 +1869,6 @@ Color.prototype = {
 
 	greyscale: function () {
 		var rgb = this.values.rgb;
-		// http://en.wikipedia.org/wiki/Grayscale#Converting_color_to_grayscale
 		var val = rgb[0] * 0.3 + rgb[1] * 0.59 + rgb[2] * 0.11;
 		this.setValues('rgb', [val, val, val]);
 		return this;
@@ -1918,10 +1894,7 @@ Color.prototype = {
 		return this;
 	},
 
-	/**
-	 * Ported from sass implementation in C
-	 * https://github.com/sass/libsass/blob/0e6b4a2850092356aa3ece07c6b249f0221caced/functions.cpp#L209
-	 */
+
 	mix: function (mixinColor, weight) {
 		var color1 = this;
 		var color2 = mixinColor;
@@ -1948,7 +1921,7 @@ Color.prototype = {
 
 	clone: function () {
 		// NOTE(SB): using node-clone creates a dependency to Buffer when using browserify,
-		// making the final build way to big to embed in Chart.js. So let's do it manually,
+	
 		// assuming that values to clone are 1 dimension arrays containing only numbers,
 		// except 'alpha' which is a number.
 		var result = new Color();
@@ -2111,9 +2084,7 @@ function isValidKey(key) {
  * @namespace Chart.helpers
  */
 var helpers = {
-	/**
-	 * An empty function that can be used, for example, for optional callback.
-	 */
+
 	noop: function() {},
 
 	/**

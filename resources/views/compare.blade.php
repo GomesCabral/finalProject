@@ -7,7 +7,6 @@
     <title>Compare Tools</title>
     <link rel="stylesheet" href="{{ asset('assets/css/calculator.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/nav.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/footer.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/js/main.js') }}">
     <script type="text/javascript" src="{{URL::asset('assets/js/main.js')}}"></script>
 </head>
