@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 15, 2022 at 11:30 AM
--- Server version: 10.4.27-MariaDB
--- PHP Version: 8.1.12
+-- Generation Time: Dec 19, 2022 at 04:24 PM
+-- Server version: 10.4.25-MariaDB
+-- PHP Version: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,6 +24,33 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `calculator_results`
+--
+
+CREATE TABLE `calculator_results` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `existingWatts` int(11) NOT NULL,
+  `CurrentBulbSelect` varchar(255) NOT NULL,
+  `ProposedValue` int(11) NOT NULL,
+  `NewBulbSelect` varchar(255) NOT NULL,
+  `TotalQuantity` int(11) NOT NULL,
+  `ElectricityCost` int(11) NOT NULL,
+  `HoursUsed` int(11) NOT NULL,
+  `DaysUsed` int(11) NOT NULL,
+  `PropCost` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `calculator_results`
+--
+
+INSERT INTO `calculator_results` (`id`, `user_id`, `existingWatts`, `CurrentBulbSelect`, `ProposedValue`, `NewBulbSelect`, `TotalQuantity`, `ElectricityCost`, `HoursUsed`, `DaysUsed`, `PropCost`) VALUES
+(1, 78, 3, 'incandescent', 7, 'incandescent', 5, 8, 4, 7, 10);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `posts`
 --
 
@@ -35,7 +62,7 @@ CREATE TABLE `posts` (
   `linktotool` varchar(255) NOT NULL,
   `user_id` int(11) NOT NULL,
   `tool_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `posts`
@@ -44,7 +71,6 @@ CREATE TABLE `posts` (
 INSERT INTO `posts` (`id`, `title`, `text`, `nameoftool`, `linktotool`, `user_id`, `tool_id`) VALUES
 (1, 'hey people I have found this tool', 'Look how amazing this tool is:', 'Smartphone', 'www.amazon.com', 3, 4),
 (2, 'hey people I have found this tool', 'Look how amazing this tool is:', 'Smartphone', 'www.amazon.com', 3, 4),
-(3, 'hey people I have found this tool', 'Look how amazing this tool is:', 'Smartphone', 'www.amazon.com', 3, 4),
 (4, 'hey people I have found this tool', 'Look how amazing this tool is:', 'Smartphone', 'www.amazon.com', 3, 4),
 (5, 'hey people I have found this tool', 'Look how amazing this tool is:', 'Smartphone', 'www.amazon.com', 3, 4),
 (6, 'hey people I have found this tool', 'Look how amazing this tool is:', 'Smartphone', 'www.amazon.com', 3, 4),
@@ -107,7 +133,40 @@ INSERT INTO `posts` (`id`, `title`, `text`, `nameoftool`, `linktotool`, `user_id
 (66, 'hey people', 'Look I have found this awesome tool: kjanvkjavkjanvk', 'Google Pixel 6', 'https://www.amazon.com/Google-Pixel-6a-Smartphone-Megapixel/dp/B0B3PSRHHN/ref=sr_1_3?keywords=smartphone&qid=1670675213&sprefix=smartphone%2Caps%2C268&sr=8-3', 3, 4),
 (67, 'test 1', 'Look I have found this awesome tool: kjanvkjavkjanvk', 'Google Pixel 6', 'https://www.amazon.com/Google-Pixel-6a-Smartphone-Megapixel/dp/B0B3PSRHHN/ref=sr_1_3?keywords=smartphone&qid=1670675213&sprefix=smartphone%2Caps%2C268&sr=8-3', 3, 4),
 (68, 'hey people', 'Look I have found this awesome tool: kjanvkjavkjanvk', 'Google Pixel 6', 'https://www.amazon.com/Google-Pixel-6a-Smartphone-Megapixel/dp/B0B3PSRHHN/ref=sr_1_3?keywords=smartphone&qid=1670675213&sprefix=smartphone%2Caps%2C268&sr=8-3', 3, 4),
-(69, 'hey people', 'Look I have found this awesome tool: kjanvkjavkjanvk', 'Google Pixel 6', 'https://www.amazon.com/Google-Pixel-6a-Smartphone-Megapixel/dp/B0B3PSRHHN/ref=sr_1_3?keywords=smartphone&qid=1670675213&sprefix=smartphone%2Caps%2C268&sr=8-3', 3, 4);
+(69, 'hey people', 'Look I have found this awesome tool: kjanvkjavkjanvk', 'Google Pixel 6', 'https://www.amazon.com/Google-Pixel-6a-Smartphone-Megapixel/dp/B0B3PSRHHN/ref=sr_1_3?keywords=smartphone&qid=1670675213&sprefix=smartphone%2Caps%2C268&sr=8-3', 3, 4),
+(70, 'sdfghjk', 'erxtcyvubhijcytuvhib j', 'jbhvgycf', 'https://www.visible.com/shop/assets/images/shop/catalogue/iPhone_12_mini_PUR_1.jpg', 81, 4),
+(71, 'sdfghjk', 'erxtcyvubhijcytuvhib j', 'jbhvgycf', 'https://www.visible.com/shop/assets/images/shop/catalogue/iPhone_12_mini_PUR_1.jpg', 81, 4);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `questionforms`
+--
+
+CREATE TABLE `questionforms` (
+  `id` int(11) NOT NULL,
+  `energy_bill` double NOT NULL DEFAULT 0,
+  `gas` varchar(255) NOT NULL DEFAULT '"off"',
+  `electric` varchar(255) NOT NULL DEFAULT '"off"',
+  `central_heating` varchar(255) NOT NULL DEFAULT '"off"',
+  `members` int(11) NOT NULL DEFAULT 1,
+  `windows` int(11) NOT NULL DEFAULT 1,
+  `electronics` varchar(255) NOT NULL DEFAULT '0',
+  `solar` varchar(255) NOT NULL DEFAULT '0',
+  `additional` varchar(255) DEFAULT NULL,
+  `user_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `questionforms`
+--
+
+INSERT INTO `questionforms` (`id`, `energy_bill`, `gas`, `electric`, `central_heating`, `members`, `windows`, `electronics`, `solar`, `additional`, `user_id`) VALUES
+(1, 1, 'off', 'off', 'on', 1, 1, 'Standby', 'Yes', 'aaa', 78),
+(2, 1, 'off', 'on', 'off', 1, 1, 'Switch Off', 'No', 'lll', 78),
+(3, 3, 'off', 'off', 'on', 1, 1, 'Switch Off', 'No', '', 78),
+(4, 2, 'off', 'off', 'on', 1, 1, 'Switch Off', 'No', '', 78),
+(5, 0, 'off', 'off', 'off', 0, 0, 'Standby', 'Yes', '', 84);
 
 -- --------------------------------------------------------
 
@@ -125,7 +184,7 @@ CREATE TABLE `real_tools` (
   `rating` double DEFAULT NULL,
   `serialnumber` varchar(255) DEFAULT NULL,
   `category` enum('smartphone','laptop','coffee machine') DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `real_tools`
@@ -146,7 +205,7 @@ CREATE TABLE `sellers` (
   `sellername` varchar(255) NOT NULL,
   `sellerurl` varchar(255) NOT NULL,
   `logo` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `sellers`
@@ -171,7 +230,7 @@ CREATE TABLE `tools` (
   `rating` double NOT NULL,
   `serialnumber` varchar(255) NOT NULL,
   `category` enum('smartphone','laptop','coffee machine') NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `tools`
@@ -227,7 +286,10 @@ INSERT INTO `tools` (`id`, `name`, `watt`, `picture`, `price`, `seller_id`, `rat
 (50, 'tool for pedro', 1000, 'tool.jpg', 10, 1, 5, '1', 'coffee machine'),
 (51, 'ashavhasvhs', 1000, 'tool.jpg', 10, 1, 5, '1', 'coffee machine'),
 (52, 'ashavhasvhs', 1000, 'tool.jpg', 10, 1, 5, '1', 'coffee machine'),
-(53, 'ashavhasvhs', 1000, 'tool.jpg', 10, 1, 5, '1', 'coffee machine');
+(53, 'ashavhasvhs', 1000, 'tool.jpg', 10, 1, 5, '1', 'coffee machine'),
+(54, 'Pedro Cabral', 88, 'https://s3.static.brasilescola.uol.com.br/be/2020/12/girassol.jpg', 344, 1, 1, '1', 'smartphone'),
+(55, 'Pedro', 33, 'shipshap', 344, 1, 1, '1', 'smartphone'),
+(56, 'lunateste', 888, 'https://lumiere-a.akamaihd.net/v1/images/image_6fbde8ae.jpeg?region=0%2C0%2C1560%2C878', 22, 1, 1, '1', 'smartphone');
 
 -- --------------------------------------------------------
 
@@ -244,7 +306,7 @@ CREATE TABLE `users` (
   `email` varchar(255) NOT NULL,
   `daily_hours_electricity_use` double NOT NULL DEFAULT 0,
   `isAdmin` tinyint(4) NOT NULL DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `users`
@@ -252,87 +314,24 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `avatar`, `firstname`, `lastname`, `password`, `email`, `daily_hours_electricity_use`, `isAdmin`) VALUES
 (3, 'John', 'John', 'Doe', '12345', 'John@email.com', 12, 0),
-(4, 'John', 'John', 'Doe', '12345', 'John@email.com', 12, 0),
-(5, 'John', 'John', 'Doe', '12345', 'John@email.com', 12, 0),
-(6, 'John', 'John', 'Doe', '12345', 'John@email.com', 12, 0),
-(7, 'John', 'John', 'Doe', '12345', 'John@email.com', 12, 0),
-(8, 'John', 'John', 'Doe', '12345', 'John@email.com', 12, 0),
-(9, 'John', 'John', 'Doe', '12345', 'John@email.com', 12, 0),
-(10, 'John', 'John', 'Doe', '12345', 'John@email.com', 12, 0),
-(11, 'John', 'John', 'Doe', '12345', 'John@email.com', 12, 0),
-(12, 'John', 'John', 'Doe', '12345', 'John@email.com', 12, 0),
-(13, 'John', 'John', 'Doe', '12345', 'John@email.com', 12, 0),
-(14, 'John', 'John', 'Doe', '12345', 'John@email.com', 12, 0),
-(15, 'John', 'John', 'Doe', '12345', 'John@email.com', 12, 0),
-(16, 'John', 'John', 'Doe', '12345', 'John@email.com', 12, 0),
-(17, 'John', 'John', 'Doe', '12345', 'John@email.com', 12, 0),
-(18, 'John', 'John', 'Doe', '12345', 'John@email.com', 12, 0),
-(19, 'John', 'John', 'Doe', '12345', 'John@email.com', 12, 0),
-(20, 'John', 'John', 'Doe', '12345', 'John@email.com', 12, 0),
-(21, 'John', 'John', 'Doe', '12345', 'John@email.com', 12, 0),
-(22, 'John', 'John', 'Doe', '12345', 'John@email.com', 12, 0),
-(23, 'John', 'John', 'Doe', '12345', 'John@email.com', 12, 0),
-(24, 'John', 'John', 'Doe', '12345', 'John@email.com', 12, 0),
-(25, 'John', 'John', 'Doe', '12345', 'John@email.com', 12, 0),
-(26, 'John', 'John', 'Doe', '12345', 'John@email.com', 12, 0),
-(27, 'John', 'John', 'Doe', '12345', 'John@email.com', 12, 0),
-(28, 'John', 'John', 'Doe', '12345', 'John@email.com', 12, 0),
-(29, 'John', 'John', 'Doe', '12345', 'John@email.com', 12, 0),
-(30, 'John', 'John', 'Doe', '12345', 'John@email.com', 12, 0),
-(31, 'John', 'John', 'Doe', '12345', 'John@email.com', 12, 0),
-(32, 'John', 'John', 'Doe', '12345', 'John@email.com', 12, 0),
-(33, 'John', 'John', 'Doe', '12345', 'John@email.com', 12, 0),
-(34, 'John', 'John', 'Doe', '12345', 'John@email.com', 12, 0),
-(35, 'John', 'John', 'Doe', '12345', 'John@email.com', 12, 0),
-(36, 'John', 'John', 'Doe', '12345', 'John@email.com', 12, 0),
-(37, 'John', 'John', 'Doe', '12345', 'John@email.com', 12, 0),
-(38, 'John', 'John', 'Doe', '12345', 'John@email.com', 12, 0),
-(39, 'John', 'John', 'Doe', '12345', 'John@email.com', 12, 0),
-(40, 'John', 'John', 'Doe', '12345', 'John@email.com', 12, 0),
-(41, 'John', 'John', 'Doe', '12345', 'John@email.com', 12, 0),
-(42, 'John', 'John', 'Doe', '12345', 'John@email.com', 12, 0),
-(43, 'John', 'John', 'Doe', '12345', 'John@email.com', 12, 0),
-(44, 'John', 'John', 'Doe', '12345', 'John@email.com', 12, 0),
-(45, 'John', 'John', 'Doe', '12345', 'John@email.com', 12, 0),
-(46, 'John', 'John', 'Doe', '12345', 'John@email.com', 12, 0),
-(47, 'John', 'John', 'Doe', '12345', 'John@email.com', 12, 0),
-(48, 'John', 'John', 'Doe', '12345', 'John@email.com', 12, 0),
-(49, 'John', 'John', 'Doe', '12345', 'John@email.com', 12, 0),
-(50, 'John', 'John', 'Doe', '12345', 'John@email.com', 12, 0),
-(51, 'John', 'John', 'Doe', '12345', 'John@email.com', 12, 0),
-(52, 'John', 'John', 'Doe', '12345', 'John@email.com', 12, 0),
-(53, 'John', 'John', 'Doe', '12345', 'John@email.com', 12, 0),
-(54, 'John', 'John', 'Doe', '12345', 'John@email.com', 12, 0),
-(55, 'John', 'John', 'Doe', '12345', 'John@email.com', 12, 0),
-(56, 'John', 'John', 'Doe', '12345', 'John@email.com', 12, 0),
-(57, 'John', 'John', 'Doe', '12345', 'John@email.com', 12, 0),
-(58, 'John', 'John', 'Doe', '12345', 'John@email.com', 12, 0),
-(59, 'John', 'John', 'Doe', '12345', 'John@email.com', 12, 0),
-(60, 'John', 'John', 'Doe', '12345', 'John@email.com', 12, 0),
-(61, 'John', 'John', 'Doe', '12345', 'John@email.com', 12, 0),
-(62, 'John', 'John', 'Doe', '12345', 'John@email.com', 12, 0),
-(63, 'John', 'John', 'Doe', '12345', 'John@email.com', 12, 0),
-(64, 'John', 'John', 'Doe', '12345', 'John@email.com', 12, 0),
-(65, 'John', 'John', 'Doe', '12345', 'John@email.com', 12, 0),
-(66, 'John', 'John', 'Doe', '12345', 'John@email.com', 12, 0),
-(67, 'John', 'John', 'Doe', '12345', 'John@email.com', 12, 0),
-(68, 'John', 'John', 'Doe', '12345', 'John@email.com', 12, 0),
-(69, 'TestRegistration', 'TestRegistration', 'TestRegistration', '1234567890', 'test@email.com', 0, 0),
-(70, 'TestRegistration', 'TestRegistration', 'TestRegistration', '1234567890', 'test@email.com', 0, 0),
-(71, 'TestRegistration', 'TestRegistration', 'TestRegistration', '1234567890', 'test@email.com', 0, 0),
-(72, 'TestRegistration', 'TestRegistration', 'TestRegistration', '1234567890', 'test@email.com', 0, 0),
-(73, 'Admin', 'Admin', 'Admin', 'password', 'admin@email.com', 0, 1),
 (74, 'TestRegistration', 'TestRegistration', 'TestRegistration', '$2y$10$A4p0yGd5HgRVTNUl.qOizO.rkyj6HK0DJMGjgbg5I0eSchbPa247q', 'test@email.com', 0, 0),
 (75, 'TestRegistration', 'TestRegistration', 'TestRegistration', '$2y$10$WfNSSuNp7Gz9uvhZdvlAgeCoOsDMfnRr2jRlgJkIy7r4tJuPWdQqm', 'test@email.com', 0, 0),
 (76, 'TestRegistration', 'TestRegistration', 'TestRegistration', '$2y$10$NK/AFDEYoCEa8QVGS1wNIu6LrY6khgw9Gua1b3ilKoONK3qt5.mda', 'test@email.com', 0, 0),
-(77, 'HashedTest', 'Gilbert', 'Zenner', '$2y$10$tEaHPYlbJHehj0iK3BocPOtEI1v1UiX9PmSWzZu35p5VuMTbbFn3.', 'gilbert@email.com', 0, 0),
-(78, 'HashedTest', 'Gilbert', 'Zenner', '$2y$10$GHQTrBJRm5buj3ZaHuVpQeCdU/.vL7s4IWHgnf2hqABqPWd.jbTNK', 'hashed@email.com', 0, 0),
 (79, 'HashedTest', 'HashedTest', 'HashedTest', '$2y$10$REj.k4m6LqiGuJH0pbfudOYBfbVIQovHHfUHYST2kwJZuOzxBUwXi', 'hashed@email.com', 0, 0),
-(80, 'HashedTest', 'HashedTest', 'HashedTest', '$2y$10$gqE87YebPkkgZHcGddRWp.hxUbHBvKwoiHr9FndpCWrN0bUfsaySa', 'hashed@email.com', 0, 0);
+(80, 'HashedTest', 'HashedTest', 'HashedTest', '$2y$10$gqE87YebPkkgZHcGddRWp.hxUbHBvKwoiHr9FndpCWrN0bUfsaySa', 'hashed@email.com', 0, 0),
+(81, 'Pedro', 'Pedro', 'Cabral', '$2y$10$P6Ykv96v.rHTQDD2dJJxXuQMztOUyxocvBltwmJNGWGh5bKd.B3e.', 'phgcabral@hotmail.com', 0, 1),
+(86, 'xux', 'xux', 'xaxa', '$2y$10$5XqrUBEMPWOkSpaa/bIlh.aTjc.5nB3Rebw5ys9GB4k46L6Rq1pjW', 'teste@teste.com', 0, 0);
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `calculator_results`
+--
+ALTER TABLE `calculator_results`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `user_id` (`user_id`);
 
 --
 -- Indexes for table `posts`
@@ -341,6 +340,13 @@ ALTER TABLE `posts`
   ADD PRIMARY KEY (`id`),
   ADD KEY `user_id` (`user_id`),
   ADD KEY `tool_id` (`tool_id`);
+
+--
+-- Indexes for table `questionforms`
+--
+ALTER TABLE `questionforms`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `user_id` (`user_id`);
 
 --
 -- Indexes for table `real_tools`
@@ -373,10 +379,22 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `calculator_results`
+--
+ALTER TABLE `calculator_results`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
+
+--
+-- AUTO_INCREMENT for table `questionforms`
+--
+ALTER TABLE `questionforms`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `real_tools`
@@ -394,13 +412,13 @@ ALTER TABLE `sellers`
 -- AUTO_INCREMENT for table `tools`
 --
 ALTER TABLE `tools`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=87;
 
 --
 -- Constraints for dumped tables
