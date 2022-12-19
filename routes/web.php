@@ -48,7 +48,9 @@ Route::post('/edit-admin-profile', [UserController::class, 'updateAdminProfile']
 
 Route::get('/questions-form', [UserController::class, 'showQuestionFormData']);
 Route::post('/questions-form', [UserController::class, 'insertQuestionFormData']);
+
 Route::get('/calculator', [UserController::class, 'showCalculator']);
+Route::get('/compare', [UserController::class, 'showCompare']);
 
 Route::get('/logout', [UserController::class, 'logOut']);
 
@@ -64,6 +66,10 @@ Route::post('/createTool', [RealToolController::class, 'store']);
 Route::get('/forum', [PostController::class, 'index']);
 Route::get('/createPost', [PostController::class, 'create']);
 Route::post('/createPost', [PostController::class, 'store']);
+
+
+Route::get('/last-cal', [PostController::class, 'teste']);
+
 
 Route::get('/welcome', function () {
     return view('welcome');

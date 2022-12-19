@@ -1,0 +1,84 @@
+* {
+    box-sizing:borderbox;
+  }
+  body{
+    background-image: url("https://media.zicxa.com/6544762");
+   
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  html {
+  margin: 0;
+  padding: 0;
+  font-family: arial;
+
+    
+    font-family: 'Varela Round', sans-serif;
+  }
+  
+  .position-form-container {
+   margin: 6em 2em 3.5em 2em;
+  }
+  
+  
+  .form-container {
+    margin: 0 auto;
+    width:60%;
+    padding: 1.5em 3em 1.5em 3em;
+   
+    
+  }
+  
+  
+  p {
+    margin-bottom:2em;
+  }
+  
+  .question {
+    display: block;
+    font-weight: bold;
+    margin-bottom:0.75em;
+  }
+  
+  .keyboard-input {
+    padding:0.8em;
+    width:60%;
+    border: 1px solid gray; 
+  }
+  
+  .keyboard-input:hover {
+      border: 1px solid #C0C0C0; 
+  }
+  
+  
+  
+  h1 {
+  color: black;
+  }
+  
+  input[type="submit"] {
+    padding:0.7em;
+    width:30%;
+    color:black;
+    font-size: larger;
+    border:none;
+    background-color:rgb(255, 255, 255);
+    border-radius: 7px;
+  }
+  input[type="submit"]:hover {
+    padding:0.7em;
+    width:30%;
+    color:black;
+    border:none;
+    background-color:#C0C0C0;
+  }
+  
+  
+  textarea {
+    height: auto;
+    width: 60%;
+    padding: 0.5em;
+    
+  }
+  
+  

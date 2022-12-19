@@ -21,7 +21,7 @@
     <div class="container px-4 px-lg-5 my-5">
         <div class="row gx-4 gx-lg-5 align-items-center">
             <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0"
-                    src="{{ $tool->picture }}" alt="..." height="900px"></div>
+                    src="{{ $tool->picture }}" alt="..." ></div>
             <div class="col-md-6">
                 <div class="small mb-1">SKU: BST-498</div>
                 <h1 class="display-5 fw-bolder">{{$tool->name}}</h1>
@@ -37,12 +37,11 @@
                     <hr>
                 </div>
                 <div class="d-flex">
-                    <input class="form-control text-center me-3" id="inputQuantity" type="num" value="1"
-                        style="max-width: 3rem" />
-                    <button onclick="location.href='https://www.amazon.com/'" class="btn btn-outline-dark flex-shrink-0"
+                   
+                    <button onclick="location.href='{{ $tool->picture }}'" class="btn btn-outline-dark flex-shrink-0"
                         type="button">
                         <i class="bi-cart-fill me-1"></i>
-                        Add to cart
+                        Seller Website
                     </button>
                 </div>
             </div>
@@ -50,7 +49,7 @@
     </div>
 </section>
 <!-- Related items section-->
-<section class="py-5 bg-light">
+<section class="py-5 bg-light related_products">
     <div class="container px-4 px-lg-5 mt-5">
         <h2 class="fw-bolder mb-4">Related products</h2>
         <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">

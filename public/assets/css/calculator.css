@@ -1,0 +1,159 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+  }
+  body{
+    background-image: url("https://files.123freevectors.com/wp-content/original/148305-glowing-abstract-green-and-white-wave-background.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+   
+  }
+  button {
+    background-color: white;
+    color: rgb(53, 43, 187);
+    border-radius: 50%;
+    height: 1.25rem;
+    width: 1.25rem;
+  }
+  .half-box {
+    width: 50%;
+    border: 2px solid #030303;
+  }
+  .half-box:nth-child(2) {margin-left: 2.5%;}
+  .three-box {
+    width: 33%;
+    border: 2px solid #0f100f;
+    margin-left: 2.5%; 
+  }
+  .three-box:nth-child(1) {margin-left: 0;}
+  .full-box {
+    width: 100%;
+    border: 2px solid #1e1f1c;
+  }
+  h3 {
+    background-color: #7db748;
+    text-align: center;
+    color: white;
+    padding: 10px 0 10px 0;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+  input, textarea, select {
+    padding: 5px;
+    margin: 5px;
+    text-align: center; 
+  }
+  .b-row {
+    margin: auto;
+    display: flex;
+    max-width: 750px; 
+  }
+  .small-box {width: 50px;}
+  p {display: inline;}
+  .gray-background {background-color: rgba(211, 211, 211, 0.285);}
+  i {
+    margin: 0 10px 0 0;
+    padding: 5px 10px;
+    color: white;
+    background-color: #7db748;
+    border-radius: 5px;
+  }
+  .energy-title {
+    color: #818181;
+    padding: 25px 10px;
+  }
+  .energy-use {text-align: left;}
+  .total-watts {
+    border: 1px solid lightgray;
+    padding: 7px 30px;
+    margin: 0 5px 0 5px;
+    font-size: 14px;
+  }
+  .full-box>div {
+      width: 50%;
+      padding: 10px 0 10px 3%;
+  }
+  
+  .led {
+    background-image: url('https://www.lightbulbwholesaler.com/images/Category/icon/618.jpg');
+    height: 150px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  .metalhalide {
+    background-image: url('https://www.aamsco.com/wp-content/uploads/ed17MH.jpg');
+    height: 150px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  .fluorescent {
+    background-image: url('https://images.easytechjunkie.com/small-fluorescent-lightbulb.jpg');
+    height: 150px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  .incandescent {
+    background-image: url('https://5.imimg.com/data5/XH/GT/PJ/SELLER-62439612/200w-glas-lamp-pin-type-wipro-g01200-500x500.jpeg');
+    height: 150px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  .highpressure {
+    background-image: url('https://5.imimg.com/data5/HD/MJ/PX/SELLER-97912544/400w-high-pressure-sodium-vapour-tubular-lamp-500x500.jpg');
+    height: 150px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  .return-box {
+      margin-top: 20px;
+      margin-bottom: 50px; 
+      padding: 20px 0 20px 0;
+      max-width: 750px;
+      margin: auto;
+  }
+  .green {color: limegreen;}
+  .red {color: red;}
+  
+  input[type="number"] {
+    -webkit-appearance: 1;
+    border-radius: 0;
+    
+  }
+  
+  /* Styles for screens smaller than 750px */
+  @media screen and (max-width: 750px){
+      body {overflow-x: hidden;}
+      .half-box {width: 100%;}
+      .half-box:nth-child(2){margin-left: auto;}
+      .b-row {display: block;}
+      .energy-use {
+          text-align: left;
+          margin: 20px 15%;
+      }
+      .full-box>div {
+          width: 100%;
+          padding: 0px 0 0 0%;
+      }
+      .three-box {
+          width: 100%;
+          margin-left: auto;
+          border: none;
+      }}

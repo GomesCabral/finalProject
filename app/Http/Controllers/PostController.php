@@ -32,6 +32,10 @@ class PostController extends Controller
         return view('create_post');
     }
 
+    public function teste(){
+        return view('last-calculator');
+    }
+
     /**
      * Store a newly created resource in storage.
      *

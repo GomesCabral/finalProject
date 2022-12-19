@@ -1,0 +1,43 @@
+
+
+th,td,p,h1,label,input{
+    color: #040404;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+input{
+        background-color: #f2f3f5;
+        border: 2px solid #070707;
+        border-radius:5px;
+}
+button{
+    color:#fafaf5;
+    background-color: #7db748;
+    border:2px solid #080808;
+    border-radius: 7px;
+    padding: 10px;
+    width:3cm;
+    margin-left:1cm;
+
+
+
+}
+.but{
+    float:left;
+    width: 20%;
+}
+.suggstandrslt{
+    float:left;
+    width:50%;
+}
+.chart{
+    float:left;
+    width:50%;
+}
+#scr{
+    size: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color:#7DB748;
+    display: none;
+    float:inline-end;
+    width:70%
+}

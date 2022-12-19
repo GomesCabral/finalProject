@@ -76,7 +76,7 @@
                     </div>
 
                     <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
-                        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"
+                        <img src="https://img.freepik.com/free-vector/kindergartener-online-service-platform-professional-nany-children-doing-different-creative-activity-day-care-center-online-forum-vector-illustration_613284-128.jpg?w=826&t=st=1671309306~exp=1671309906~hmac=ffb052711d9fe52dee956cbf6d6a714189665dec027d6131ef668cb7bee799ca"
                         class="img-fluid" alt="Sample image">
                         <img src="">
                     </div>

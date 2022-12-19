@@ -36,7 +36,7 @@
           
                 <h1 class="masthead-heading mb-0" style="font-size: 80px;">Turn off the light</h1>
                 <h2 class="masthead-subheading mb-0" style="font-size: 50px;" >when outside it’s bright</h2>
-                <a class="btn btn-success btn-xl rounded-pill mt-5" href="#scroll">Get Started</a>
+                <a class="btn btn-success btn-xl rounded-pill mt-5" href="{{}}">Get Started</a>
             </div>
         </div>
       

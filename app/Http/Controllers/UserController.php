@@ -192,6 +192,10 @@ class UserController extends Controller
         return view('calculator');
     }
 
+    public function showCompare(){
+        return view('/compare');
+    }
+
     public function showProfile()
     {
         $id = session('user_id');
@@ -239,7 +243,6 @@ class UserController extends Controller
             return redirect('/admin-profile')->with('message', 'Successfully updated profile');
         } else
             return redirect('/admin-profile')->with('error', 'problem updating profile');
-        ;
     }
     public function updateProfile(UpdateProfileRequest $request)
     {
@@ -261,7 +264,6 @@ class UserController extends Controller
             return redirect('/profile')->with('message', 'Successfully updated profile');
         } else
             return redirect('/profile')->with('error', 'problem updating profile');
-        ;
     }
 
     public function showLogin()
@@ -289,29 +291,29 @@ class UserController extends Controller
     }
 
 
-    public function addPersonalTool()
-    {
-        return view('update-personal-tools');
-    }
+    // public function addPersonalTool()
+    // {
+    //     return view('update-personal-tools');
+    // }
 
-    public function insertPersonalTool(Request $request)
-    {
-        $tool = new PersonalTool;
+    // public function insertPersonalTool(Request $request)
+    // {
+    //     $tool = new PersonalTool;
 
-        $tool->name = $request->name;
-        $tool->watt = $request->watt;
-        $tool->picture = $request->picture;
-        $tool->price = $request->price;
-        $tool->seller = $request->seller;
-        $tool->rating = $request->rating;
-        $tool->serialnumber = $request->serialnumber;
+    //     $tool->name = $request->name;
+    //     $tool->watt = $request->watt;
+    //     $tool->picture = $request->picture;
+    //     $tool->price = $request->price;
+    //     $tool->seller = $request->seller;
+    //     $tool->rating = $request->rating;
+    //     $tool->serialnumber = $request->serialnumber;
 
-        $result = $tool->save();
-        if ($result)
-            return redirect('/')->with('message', 'Successfully insert in the DB !');
-        else
-            echo "problem inserting";
-    }
+    //     $result = $tool->save();
+    //     if ($result)
+    //         return redirect('/')->with('message', 'Successfully insert in the DB !');
+    //     else
+    //         echo "problem inserting";
+    // }
 
     /**
      * Show the form for editing the specified resource.
