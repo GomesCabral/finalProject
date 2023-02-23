@@ -109,7 +109,7 @@
                                 <i class="fas fa-gem me-3 "></i>EnliTe
                             </h6>
                             <p class="footer">
-                                Electro is a tool for estimating the electricity consumption of your home which calculates the total electricity consumption of your home and the electricity consumption of each appliance.
+                                Enlite is a website about estimating the electricity consumption of your home Or company it allows you to calculates the total electricity consumption of each appliance.
                             </p>
                         </div>
                         <!-- Grid column -->

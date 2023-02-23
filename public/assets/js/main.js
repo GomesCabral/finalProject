@@ -137,28 +137,7 @@ function calc() {
       e = propCost * totalQty;
       totalCost = e.toFixed(2);
       document.getElementById('TotalCost').innerHTML = totalCost.replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,");
-    
-      /*if (currentCost >= newCost) {
-        document.getElementById('SaveLost').innerHTML = 'Amount <strong>Saved</strong> by';
-        document.getElementById('NewCost').classList.remove('red');
-        document.getElementById('Savings').classList.remove('red');
-        document.getElementById('NewCost').classList.add('green');
-        document.getElementById('Savings').classList.add('green');
-      } else if (currentCost <= newCost) {
-        document.getElementById('SaveLost').innerHTML = 'Amount <strong>Lost</strong> by';
-        document.getElementById('NewCost').classList.add('red');
-        document.getElementById('Savings').classList.add('red');
-      } else {
-        document.getElementById('SaveLost').innerHTML = 'Amount <strong>Saved</strong> by';
-        document.getElementById('NewCost').classList.remove('red');
-        document.getElementById('Savings').classList.remove('red');
-        document.getElementById('NewCost').classList.remove('green');
-        document.getElementById('Savings').classList.remove('green');
-      }*/
-      
-      
-    
-      
+          
   };
   
   //This Function Disables the ENTER key when using the form
